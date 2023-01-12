@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/places', require('./controllers/places'))
 app.use('/api/users', require('./controllers/users'))
+app.use('/authentication', require('./controllers/authentication'))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
