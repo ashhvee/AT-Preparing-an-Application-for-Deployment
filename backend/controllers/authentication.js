@@ -6,7 +6,6 @@ const jwt = require('json-web-token')
 const { User } = db
 
 router.post('/', async (req, res) => {
-    
     let user = await User.findOne({
         where: { email: req.body.email }
     })
@@ -21,19 +20,27 @@ router.post('/', async (req, res) => {
     }
 })
 
-___
-// router.get('/profile', async (req, res) => {
-//     try {
-//         let user = await User.findOne({
-//             where: {
-//                 userId:  
-//             }
-//         })
-//         res.json(user)
-//     } catch {
-//         res.json(null)
-//     }
-// })
+
+router.get('/profile', async (req, res) => {
+    try {
+        const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod == 'Bearer') {
+
+            const result = await jwt.decode(process.env.JWT_SECRET, token)
+            const { id } = result.value
+
+            let user = await User.findOne({
+                where: {
+                    userId: id
+                }
+            })
+            res.json(user)
+        }
+    } catch {
+        res.json(null)
+    }
+})
 
 
 module.exports = router
