@@ -37,8 +37,12 @@ function PlaceDetails() {
 	}
 
 	async function deleteComment(deletedComment) {
-		await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments/${deletedComment.commentId}`, {
-			method: 'DELETE'
+		const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments/${deletedComment.commentId}`, {
+			method: 'DELETE',
+			headers: {
+				'Authorization': `Bearer ${localStorage.getItem('token')}`,
+				'Content-Type': 'application/json'
+			}
 		})
 
 		setPlace({
@@ -47,6 +51,18 @@ function PlaceDetails() {
 				.filter(comment => comment.commentId !== deletedComment.commentId)
 		})
 	}
+
+
+	// async function deleteComment(deletedComment) {
+	// 	const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments/${deletedComment.commentId}`, {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 			'Authorization': `Bearer ${localStorage.getItem('token')}`
+	// 		},
+	// 		body: JSON.stringify(commentAttributes)
+	// 	})
+	// }
 
 	async function createComment(commentAttributes) {
 		const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments`, {
@@ -69,8 +85,6 @@ function PlaceDetails() {
 		})
 
 	}
-
-
 
 	let comments = (
 		<h3 className="inactive">
