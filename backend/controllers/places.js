@@ -44,6 +44,7 @@ router.get('/:placeId', async (req, res) => {
     }
 })
 
+
 router.put('/:placeId', async (req, res) => {
     let placeId = Number(req.params.placeId)
     if (isNaN(placeId)) {
@@ -61,6 +62,7 @@ router.put('/:placeId', async (req, res) => {
         }
     }
 })
+
 
 router.delete('/:placeId', async (req, res) => {
     let placeId = Number(req.params.placeId)
@@ -81,6 +83,11 @@ router.delete('/:placeId', async (req, res) => {
     }
 })
 
+
+  
+
+  
+
 router.post('/:placeId/comments', async (req, res) => {
     const placeId = Number(req.params.placeId)
 
@@ -91,27 +98,25 @@ router.post('/:placeId/comments', async (req, res) => {
     })
 
     if (!place) {
-        res.status(404).json({ message: `Could not find place with id "${placeId}"` })
+        return res.status(404).json({ message: `Could not find place with id "${placeId}"` })
     }
 
-    const author = await User.findOne({
-        where: { userId: req.body.authorId }
-    })
-
-    if (!author) {
-        res.status(404).json({ message: `Could not find author with id "${req.body.authorId}"` })
+    if (!req.currentUser) {
+        return res.status(404).json({ message: `You must be logged in to leave a rant or rave.` })
     }
 
     const comment = await Comment.create({
         ...req.body,
+        authorId: req.currentUser.userId,
         placeId: placeId
     })
 
     res.send({
         ...comment.toJSON(),
-        author
+        author: req.currentUser
     })
 })
+
 
 router.delete('/:placeId/comments/:commentId', async (req, res) => {
     let placeId = Number(req.params.placeId)
