@@ -80,7 +80,6 @@ function PlaceDetails() {
 				comment
 			]
 		})
-
 	}
 
 	let comments = (
