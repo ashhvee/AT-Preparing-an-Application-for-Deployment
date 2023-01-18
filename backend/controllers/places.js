@@ -4,7 +4,7 @@ const db = require("../models")
 const { Place, Comment, User } = db
 
 router.post('/', async (req, res) => {
-    if(req.currentUser?.role !== 'admin'){
+    if(req.currentUser?.canAddPlace()){
         return res.status(403).json({ message: 'You are not allowed to add a place'})
     }
     if (!req.body.pic) {
@@ -49,7 +49,7 @@ router.get('/:placeId', async (req, res) => {
 
 
 router.put('/:placeId', async (req, res) => {
-    if(req.currentUser?.role !== 'admin'){
+    if(req.currentUser?.canEditPlace()){
         return res.status(403).json({ message: 'You are not allowed to edit a place'})
     }
     let placeId = Number(req.params.placeId)
@@ -100,8 +100,8 @@ router.post('/:placeId/comments', async (req, res) => {
 
 
 router.delete('/:placeId', async (req, res) => {
-    if(req.currentUser?.role !== 'admin'){
-        return res.status(403).json({ message: 'You are not allowed to add a place'})
+    if(req.currentUser?.canAddPlace()){
+        return res.status(403).json({ message: 'You are not allowed to delete a place'})
     }
     let placeId = Number(req.params.placeId)
     if (isNaN(placeId)) {
