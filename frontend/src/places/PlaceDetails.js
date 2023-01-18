@@ -7,9 +7,7 @@ import NewCommentForm from "./NewCommentForm";
 function PlaceDetails() {
 
 	const { placeId } = useParams()
-
 	const history = useHistory()
-
 	const [place, setPlace] = useState(null)
 
 	useEffect(() => {
@@ -112,11 +110,29 @@ function PlaceDetails() {
 		)
 		comments = place.comments.map(comment => {
 			return (
-				<CommentCard key={comment.commentId} comment={comment} onDelete={() => deleteComment(comment)} />
+				<CommentCard
+					key={comment.commentId}
+					comment={comment}
+					onDelete={() => deleteComment(comment)}
+				/>
 			)
 		})
 	}
 
+	let placeActions = null
+
+	if (CurrentUser?.role === 'admin') {
+		placeActions = (
+			<>
+				<a className="btn btn-warning" onClick={deletePlace}>
+					Edit
+				</a>
+				<button type="submit" className="btn btn-danger" onClick={deletePlace}>
+					Delete
+				</button>
+			</>
+		)
+	}
 
 	return (
 		<main>
