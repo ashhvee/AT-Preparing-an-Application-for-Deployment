@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
-import { useHistory, useParams } from "react-router"
+import { useHistory, useParams } from "react-router";
 import { CurrentUser } from "../contexts/CurrentUser";
-import CommentCard from './CommentCard'
+import CommentCard from './CommentCard';
 import NewCommentForm from "./NewCommentForm";
 
 function PlaceDetails() {
@@ -42,7 +42,6 @@ function PlaceDetails() {
 				'Content-Type': 'application/json'
 			}
 		})
-
 		setPlace({
 			...place,
 			comments: place.comments

@@ -4,7 +4,6 @@ import { useHistory, useParams } from "react-router"
 function SignUpForm() {
 
 	const history = useHistory()
-
 	const [user, setUser] = useState({
 		firstName: '',
 		lastName: '',

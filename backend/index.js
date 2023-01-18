@@ -14,16 +14,16 @@ app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(defineCurrentUser)
 
-// serve static frontend in production mode
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, 'public', 'build')));
-}
-
 // Controllers & Routes
 app.use(express.urlencoded({ extended: true }))
 app.use('/places', require('./controllers/places'))
 app.use('/users', require('./controllers/users'))
 app.use('/authentication', require('./controllers/authentication'))
+
+// serve static frontend in production mode
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, 'public', 'build')));
+}
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
