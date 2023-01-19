@@ -16,11 +16,11 @@ main {
     margin-right: 20px;
     margin-left: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(91, 28, 159);
 }
 
 nav {
-    background-color: cornflowerblue;
+    background-color: rgb(116, 148, 156);
     padding: 10px;
 }
 
@@ -55,3 +55,10 @@ form {
 .border {
     border: 1px solid gray;
 }
+
+.home{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

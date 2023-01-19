@@ -2,10 +2,10 @@
 function Home() {
   return (
     <main>
-      <h1>HOME</h1>
+      <h1>UNITY</h1>
       <div >
-        <img height="300" width="500" src={process.env.REACT_APP_SERVER_URL + 'images/chia-fruit-drink.jpg'} alt="Chia Fruit Shake" />
-        <div>
+        <img className="home" height="300" width="500" src={process.env.REACT_APP_SERVER_URL + 'images/chia-fruit-drink.jpg'} alt="Chia Fruit Shake" />
+        <div className="home">
           Photo by <a href="AUTHOR_LINK">Brenda Godinez</a> on <a href="UNSPLASH_LINK">Unsplash</a>
         </div>
       </div>
