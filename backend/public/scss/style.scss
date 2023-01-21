@@ -1,6 +1,9 @@
 body {
   background-color: lightblue;
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -16,50 +19,59 @@ main {
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
+
+  text-align: center;
+}
+
+.box2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+// nav {
+//   background-color: rgb(142, 153, 172);
+//   display: inline;
+//   border-radius: 15px 50px 30px 5px;
+// }
+
+// nav ul {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+//   background-color: #333;
+//   border-radius: 15px 50px 30px 5px;
+// }
+
+// nav li {
+//   float: left;
+//   margin-right: 25px;
+//   border-right: 1px solid #bbb;
+// }
+
+// nav li:last-child {
+//   border-right: none;
+// }
+
+// nav a {
+//   display: block;
+//   color: white;
+//   font-size: 1.5em;
+//   text-align: center;
+//   padding: 14px 16px;
+// }
+
+// nav a:hover {
+//   color: lightblue;
+//   text-decoration: none;
+// }
+
+// .active {
+//   background-color: #04aa6d;
+// }
+
+input {
   background-color: white;
-  text-align: center;
-}
-
-nav {
-  background-color: rgb(142, 153, 172);
-  padding: 10px;
-  border-radius: 15px 50px 30px 5px;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  border-radius: 15px 50px 30px 5px;
-}
-
-nav li {
-  float: left;
-  margin-right: 25px;
-  border-right: 1px solid #bbb;
-}
-
-li :last-child {
-  border-right: none;
-}
-
-nav a {
-  display: block;
-  color: white;
-  font-size: 1.5em;
-  text-align: center;
-  padding: 14px 16px;
-}
-
-nav a:hover {
-  color: lightblue;
-  text-decoration: none;
-}
-
-.active {
-  background-color: #04aa6d;
 }
 
 form {
@@ -67,11 +79,11 @@ form {
 }
 
 .inactive {
-  color: gray;
+  color: rgb(255, 246, 246);
 }
 
 .border {
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 253, 253);
 }
 
 .home {
@@ -171,7 +183,7 @@ details[open] summary::after {
   filter: brightness(200%);
 }
 details::before {
-  content: "← Click This Button";
+  content: "← Navigation";
   color: var(--secoColor);
   position: absolute;
   margin-left: 80px;
