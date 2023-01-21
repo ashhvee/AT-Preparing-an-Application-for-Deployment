@@ -8,21 +8,28 @@ body {
 
 h1 {
   text-align: center;
-  color: cornflowerblue;
+  color: rgb(255, 255, 255);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   font-size: 300px;
 }
 
-h2 {
-  color: lightblue;
+h2, h3, h4, h5 {
+  color: rgb(255, 255, 255);
 }
+
+// h4 {
+//   color:rgb(255, 255, 255)
+// }
+
+// h5 {
+//   color: rgb(255, 255, 255)
+// }
 
 main {
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
-
   text-align: center;
 }
 
@@ -55,7 +62,7 @@ form {
 
 :root {
   --primColor: #dcdcdc;
-  --secoColor: #555555;
+  --secoColor: #ffffff;
   --cornerRad: 4px;
 }
 body {

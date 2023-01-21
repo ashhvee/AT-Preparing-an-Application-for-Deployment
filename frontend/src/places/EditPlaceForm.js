@@ -11,7 +11,8 @@ function EditPlaceForm() {
     pic: "",
     city: "",
     state: "",
-    cuisines: "",
+    zipcode: "",
+    address: ""
   });
 
   useEffect(() => {
@@ -44,26 +45,26 @@ function EditPlaceForm() {
       <h1>Edit Place</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name"></label>
+          <label htmlFor="placename"></label>
           <input
             required
-            value={place.name}
-            onChange={(e) => setPlace({ ...place, name: e.target.value })}
+            value={place.placename}
+            onChange={(e) => setPlace({ ...place, placename: e.target.value })}
             className="form-control"
-            id="name"
-            name="name"
+            id="placename"
+            name="placename"
             placeholder="Place Name"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="founded"></label>
+          <label htmlFor="address"></label>
           <input
             required
-            value={place.founded}
-            onChange={(e) => setPlace({ ...place, founded: e.target.value })}
+            value={place.address}
+            onChange={(e) => setPlace({ ...place, address: e.target.value })}
             className="form-control"
-            id="founded"
-            name="founded"
+            id="address"
+            name="address"
             placeholder="Address"
           />
         </div>
@@ -79,13 +80,14 @@ function EditPlaceForm() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="city">City</label>
+          <label htmlFor="city"></label>
           <input
             value={place.city}
             onChange={(e) => setPlace({ ...place, city: e.target.value })}
             className="form-control"
             id="city"
             name="city"
+            placeholder="city"
           />
         </div>
         <div className="form-group">
@@ -100,13 +102,13 @@ function EditPlaceForm() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="cuisines"></label>
+          <label htmlFor="zipcode"></label>
           <input
-            value={place.cuisines}
-            onChange={(e) => setPlace({ ...place, cuisines: e.target.value })}
+            value={place.zipcode}
+            onChange={(e) => setPlace({ ...place, zipcode: e.target.value })}
             className="form-control"
-            id="cuisines"
-            name="cuisines"
+            id="zipcode"
+            name="zipcode"
             required
             placeholder="Zip Code"
           />

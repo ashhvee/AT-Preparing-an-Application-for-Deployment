@@ -3,7 +3,6 @@ import { useHistory } from "react-router";
 import { CurrentUser } from "../contexts/CurrentUser";
 
 function LoginForm() {
-  const history = useHistory();
 
     const history = useHistory()
     const { setCurrentUser } = useContext(CurrentUser)
@@ -47,7 +46,7 @@ function LoginForm() {
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-sm-6 form-group">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email"></label>
                         <input
                             type="email"
                             required
@@ -56,10 +55,11 @@ function LoginForm() {
                             className="form-control"
                             id="email"
                             name="email"
+                            placeholder="email"
                         />
                     </div>
                     <div className="col-sm-6 form-group">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password"></label>
                         <input
                             type="password"
                             required
@@ -68,6 +68,7 @@ function LoginForm() {
                             className="form-control"
                             id="password"
                             name="password"
+                            placeholder="password"
                         />
                     </div>
                 </div>

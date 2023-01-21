@@ -9,13 +9,14 @@ function NewPlaceForm() {
     pic: "",
     city: "",
     state: "",
-    cuisines: "",
+    zipcode: "",
+    address: "",
   });
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch(`${process.env.REACT_APP_SERVER_URL}places`, {
+    await fetch(`http://localhost:5000/places`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,18 +41,18 @@ function NewPlaceForm() {
               className="form-control"
               id="name"
               name="name"
-              placeholder="Place Name"
+              placeholder="Places"
             />
           </div>
           <div className="col-md-4 mb-3">
-            <label htmlFor="founded"></label>
+            <label htmlFor="address"></label>
             <input
               required
-              value={place.founded}
-              onChange={(e) => setPlace({ ...place, founded: e.target.value })}
+              value={place.address}
+              onChange={(e) => setPlace({ ...place, address: e.target.value })}
               className="form-control"
-              id="founded"
-              name="founded"
+              id="address"
+              name="address"
               placeholder="Address"
             />
           </div>
@@ -89,15 +90,15 @@ function NewPlaceForm() {
             />
           </div>
           <div className="col-md-3 mb-3">
-            <label htmlFor="cuisines"></label>
+            <label htmlFor="zipcode"></label>
             <input
-              value={place.cuisines}
-              onChange={(e) => setPlace({ ...place, cuisines: e.target.value })}
+              value={place.zipcode}
+              onChange={(e) => setPlace({ ...place, zipcode: e.target.value })}
               className="form-control"
-              id="cuisines"
-              name="cuisines"
+              id="zipcode"
+              name="zipcode"
               required
-              placeholder="Zip Code"
+              placeholder="Zip code"
             />
           </div>
         </div>

@@ -9,14 +9,14 @@ body {
 
 h1 {
   text-align: center;
-  color: cornflowerblue;
+  color: rgb(255, 255, 255);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   font-size: 300px;
 }
 
-h2 {
-  color: lightblue;
+h2, h3, h4, h5 {
+  color: rgb(255, 255, 255);
 }
 
 main {
@@ -39,20 +39,6 @@ form {
   display: inline;
 }
 
-input[type=email] {
-  display: inline-block;
-  border: none;
-  border-bottom: 2px solid red;
-  width: 10%;
-}
-
-input[type=password] {
-  display: inline-block;
-  border: none;
-  border-bottom: 2px solid red;
-  width: 10%;
-}
-
 .inactive {
   color: rgb(255, 246, 246);
 }
@@ -69,7 +55,7 @@ input[type=password] {
 
 :root {
   --primColor: #dcdcdc;
-  --secoColor: #555555;
+  --secoColor: #ffffff;
   --cornerRad: 4px;
 }
 

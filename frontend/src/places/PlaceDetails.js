@@ -49,18 +49,6 @@ function PlaceDetails() {
 		})
 	}
 
-
-	// async function deleteComment(deletedComment) {
-	// 	const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments/${deletedComment.commentId}`, {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 			'Authorization': `Bearer ${localStorage.getItem('token')}`
-	// 		},
-	// 		body: JSON.stringify(commentAttributes)
-	// 	})
-	// }
-
 	async function createComment(commentAttributes) {
 		const response = await fetch(`${process.env.REACT_APP_SERVER_URL}places/${place.placeId}/comments`, {
 			method: 'POST',
@@ -149,7 +137,7 @@ function PlaceDetails() {
 						Description
 					</h4>
 					<h5>
-						{place.name} has been serving {place.city}, {place.state} since {place.founded}.
+						{place.name} has been serving {place.city}, {place.state}.
 					</h5>
 					<h5>
 						You can find this in {place.city}, {place.state}
