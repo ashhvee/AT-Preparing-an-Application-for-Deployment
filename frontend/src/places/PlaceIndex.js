@@ -24,11 +24,11 @@ function PlaceIndex(data) {
 						{place.name}
 					</a>
 				</h2>
-				<p className="text-center">
+				{/* <p className="text-center">
 					{place.cuisines}
-				</p>
-				<img style={{ maxWidth: 200 }} src={place.pic} alt={place.name} />
-				<p className="text-center">
+				</p> */}
+				<img style={{ maxWidth: 400, maxHeight: 400 }} src={place.pic} alt={place.name} />
+				<p className="text-left">
 					Located in {place.city}, {place.state}
 				</p>
 			</div>
@@ -36,7 +36,7 @@ function PlaceIndex(data) {
 	})
 	return (
 		<main>
-			<h1>Places to Rant or Rave About</h1>
+			<h1>Hotel Index</h1>
 			<div className="row">
 				{placesFormatted}
 			</div>

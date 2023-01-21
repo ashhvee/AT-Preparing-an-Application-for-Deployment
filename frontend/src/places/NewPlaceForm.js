@@ -29,7 +29,7 @@ function NewPlaceForm() {
 
 	return (
 		<main>
-			<h1>Add a New Place</h1>
+			<h1>Share Your Travels</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label htmlFor="name">Place Name</label>
@@ -43,7 +43,7 @@ function NewPlaceForm() {
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="founded">Year Founded</label>
+					<label htmlFor="founded">Address</label>
 					<input
 						required
 						value={place.founded}
@@ -83,14 +83,14 @@ function NewPlaceForm() {
 						name="state"
 					/>
 				</div>
-				<div className="form-group">
+				{/* <div className="form-group">
 					<label htmlFor="cuisines">Cuisines</label>
 					<input
 						value={place.cuisines}
 						onChange={e => setPlace({ ...place, cuisines: e.target.value })}
 						className="form-control"
 						id="cuisines" name="cuisines" required />
-				</div>
+				</div> */}
 				<input className="btn btn-primary" type="submit" value="Add Place" />
 			</form>
 		</main>

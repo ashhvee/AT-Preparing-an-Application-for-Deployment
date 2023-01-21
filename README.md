@@ -1,10 +1,13 @@
-# Project REST-Rant
-REST-Rant is an app where users can review restaurants.
+# Unity
+
+Unity is a social blogging site where you can share your travels with the world.
 
 ### Setup
+
 First, you'll need a Postgres database to connect to. Follow instructions here to setup the database and save credentials for the next step.
 
 Next create a `.env` file inside of `backend`. It will need to contain the following environment variables (change the values for the database to match what you defined in the previous step)
+
 ```
 PORT=5000
 DB_USERNAME=rest_rant_user
@@ -19,6 +22,7 @@ Next, `cd` into `frontend`, and run `npm install` to install dependencies for th
 Finally, in separate terminals, run `npm start` in each folder so that the API and React app are running at the same time.
 
 ### API (http://localhost:5000)
+
 | Method | Path                                 | Purpose                                   |
 | ------ | ------------------------------------ | ----------------------------------------- |
 | GET    | /                                    | Home page                                 |
@@ -30,8 +34,8 @@ Finally, in separate terminals, run `npm start` in each folder so that the API a
 | POST   | /places/:placeId/comments            | Create a comment about a particular place |
 | DELETE | /places/:placeId/comments/:commentId | Delete a comment about a particular place |
 
-
 ### App (http://localhost:3000)
+
 | Path                  | Component                 | Purpose                                                                         |
 | --------------------- | ------------------------- | ------------------------------------------------------------------------------- |
 | /                     | `Home.js`                 | Home page                                                                       |
@@ -40,3 +44,14 @@ Finally, in separate terminals, run `npm start` in each folder so that the API a
 | /places/new           | `places/NewPlaceForm.js`  | Form for creating a new place                                                   |
 | /places/:placeId      | `places/PlaceDetails.js`  | Details of a place, including it's comments, and a form to create a new comment |
 | /places/:placeId/edit | `places/EditPlaceForm.js` | Form for editing a place                                                        |
+
+### Technologies Used
+
+| Visual Studio Code
+| PostgreSQL
+| pgAdmin4
+| AWS
+
+###
+
+| Unity is still under progress and some functionalities may be unavailable. Future upgrades are expected!

@@ -1,6 +1,8 @@
 body {
   background-color: lightblue;
   text-align: center;
+  background-image: url("/backend/public/images/hotelBackground.jpg");
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -46,6 +48,20 @@ nav a:hover {
 
 form {
   display: inline;
+}
+
+input[type=email] {
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid red;
+  width: 10%;
+}
+
+input[type=password] {
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid red;
+  width: 10%;
 }
 
 .inactive {

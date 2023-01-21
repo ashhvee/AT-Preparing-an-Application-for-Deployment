@@ -83,14 +83,14 @@ function PlaceDetails() {
 	}
 
 	let comments = (
-		<h3 className="inactive">
+		<h5 className="inactive">
 			No comments yet!
-		</h3>
+		</h5>
 	)
 	let rating = (
-		<h3 className="inactive">
+		<h5 className="inactive">
 			Not yet rated
-		</h3>
+		</h5>
 	)
 	if (place.comments.length) {
 		let sumRatings = place.comments.reduce((tot, c) => {
@@ -136,27 +136,24 @@ function PlaceDetails() {
 		<main>
 			<div className="row">
 				<div className="col-sm-6">
-					<img style={{ maxWidth: 200 }} src={place.pic} alt={place.name} />
-					<h3>
-						Located in {place.city}, {place.state}
-					</h3>
+					<img style={{ maxWidth: 500, maxHeight: 500 }} src={place.pic} alt={place.name} />
 				</div>
 				<div className="col-sm-6">
 					<h1>{place.name}</h1>
-					<h2>
+					<h4>
 						Rating
-					</h2>
+					</h4>
 					{rating}
 					<br />
-					<h2>
-						Description
-					</h2>
-					<h3>
-						{place.name} has been serving {place.city}, {place.state} since {place.founded}.
-					</h3>
 					<h4>
-						Serving {place.cuisines}.
+						Description
 					</h4>
+					<h5>
+						{place.name} has been serving {place.city}, {place.state} since {place.founded}.
+					</h5>
+					<h5>
+						You can find this in {place.city}, {place.state}
+					</h5>
 					<br />
 					<a className="btn btn-warning" onClick={editPlace}>
 						Edit
@@ -167,16 +164,16 @@ function PlaceDetails() {
 				</div>
 			</div>
 			<hr />
-			<h2>Comments</h2>
+			<h4>Comments</h4>
 			<div className="row">
 				{comments}
 			</div>
 			<hr />
-			<h2>Got Your Own Rant or Rave?</h2>
-			<NewCommentForm
-				place={place}
-				onSubmit={createComment}
-			/>
+			<h4>Share your experience below!</h4>
+				<NewCommentForm
+					place={place}
+					onSubmit={createComment}
+				/>
 		</main>
 	)
 }
