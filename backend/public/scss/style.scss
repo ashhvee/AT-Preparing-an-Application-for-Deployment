@@ -9,6 +9,9 @@ body {
 h1 {
   text-align: center;
   color: cornflowerblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 300px;
 }
 
 h2 {
@@ -27,48 +30,6 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
-
-// nav {
-//   background-color: rgb(142, 153, 172);
-//   display: inline;
-//   border-radius: 15px 50px 30px 5px;
-// }
-
-// nav ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-//   background-color: #333;
-//   border-radius: 15px 50px 30px 5px;
-// }
-
-// nav li {
-//   float: left;
-//   margin-right: 25px;
-//   border-right: 1px solid #bbb;
-// }
-
-// nav li:last-child {
-//   border-right: none;
-// }
-
-// nav a {
-//   display: block;
-//   color: white;
-//   font-size: 1.5em;
-//   text-align: center;
-//   padding: 14px 16px;
-// }
-
-// nav a:hover {
-//   color: lightblue;
-//   text-decoration: none;
-// }
-
-// .active {
-//   background-color: #04aa6d;
-// }
 
 input {
   background-color: white;
@@ -184,7 +145,7 @@ details[open] summary::after {
 }
 details::before {
   content: "← Navigation";
-  color: var(--secoColor);
+  color: white;
   position: absolute;
   margin-left: 80px;
   padding: 10px 10px;

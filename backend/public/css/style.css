@@ -10,6 +10,9 @@ body {
 h1 {
   text-align: center;
   color: cornflowerblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 300px;
 }
 
 h2 {
@@ -160,7 +163,7 @@ details[open] summary::after {
 
 details::before {
   content: "← Navigation";
-  color: var(--secoColor);
+  color: white;
   position: absolute;
   margin-left: 80px;
   padding: 10px 10px;

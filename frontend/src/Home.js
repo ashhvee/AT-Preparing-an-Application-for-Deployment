@@ -1,7 +1,7 @@
 function Home() {
   return (
     <main>
-      <h1>UNITY</h1>
+      <h1 className="home">UNITY</h1>
       {/* <div>
         <img
           className="home"
@@ -17,7 +17,10 @@ function Home() {
       </div> */}
       <div class="wrapper">
         <div class="box box2">
-          This box has a background color with an alpha channel
+          Unity is an app that helps keep people together in tough times. With
+          this app you'll be able to post an available space that people can
+          book to stay for the night. You can sign up to make an account and
+          start posting and rating other places you've stayed at.
         </div>
       </div>
 
